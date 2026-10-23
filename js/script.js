@@ -198,22 +198,16 @@ form.addEventListener('submit',function(e){
   dots[0].classList.add('on'); iniciar();
 })();
 
-// Logo 3D: apila copias del logo para dar grosor y lo inclina hacia el mouse
+// Logo 3D sutil: se inclina apenas hacia el mouse (el flotado lo hace el CSS)
 (function(){
-  var l=document.getElementById('logo3d'); if(!l) return;
-  var img=l.querySelector('img'); img.classList.add('frente');
-  for(var i=1;i<=12;i++){
-    var c=img.cloneNode(false); c.className='capa'; c.alt=''; c.setAttribute('aria-hidden','true'); c.style.setProperty('--i',i);
-    l.insertBefore(c,img);
-  }
-  if(quietoMov) return;
+  var l=document.getElementById('logo3d'); if(!l||quietoMov) return;
   var zona=l.closest('.hero');
   zona.addEventListener('pointermove',function(e){
     if(e.pointerType==='touch') return;
     var r=l.getBoundingClientRect();
-    var dx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(window.innerWidth/3)));
-    var dy=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(window.innerHeight/3)));
-    l.style.setProperty('--ry',(dx*38)+'deg'); l.style.setProperty('--rx',(-dy*26)+'deg'); l.style.setProperty('--s','1.06');
+    var dx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(window.innerWidth/2)));
+    var dy=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(window.innerHeight/2)));
+    l.style.setProperty('--ry',(dx*11)+'deg'); l.style.setProperty('--rx',(-dy*7)+'deg'); l.style.setProperty('--s','1.02');
   });
   zona.addEventListener('pointerleave',function(){ ['--rx','--ry','--s'].forEach(function(p){l.style.removeProperty(p);}); });
 })();
