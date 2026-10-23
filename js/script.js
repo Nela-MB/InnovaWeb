@@ -207,7 +207,7 @@ form.addEventListener('submit',function(e){
     var r=l.getBoundingClientRect();
     var dx=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/(window.innerWidth/2)));
     var dy=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/(window.innerHeight/2)));
-    l.style.setProperty('--ry',(dx*11)+'deg'); l.style.setProperty('--rx',(-dy*7)+'deg'); l.style.setProperty('--s','1.02');
+    l.style.setProperty('--ry',(dx*20)+'deg'); l.style.setProperty('--rx',(-dy*13)+'deg'); l.style.setProperty('--s','1.04');
   });
   zona.addEventListener('pointerleave',function(){ ['--rx','--ry','--s'].forEach(function(p){l.style.removeProperty(p);}); });
 })();

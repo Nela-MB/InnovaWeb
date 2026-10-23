@@ -54,14 +54,14 @@ nav a.activo{background:var(--vino);color:#fff}
 .btn:active{transform:scale(.97)}
 .btn[disabled]{opacity:.4;cursor:not-allowed}
 .btn-link{background:none;border:0;color:var(--vino);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer;padding:4px 0}
-.hero-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;perspective:1000px}
-/* Logo 3D sutil: flota suave y se inclina apenas hacia el mouse */
-.flota{width:100%;max-width:400px;transform-style:preserve-3d;animation:flotar 8s ease-in-out infinite}
-.logo3d{transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--s,1));transition:transform .7s cubic-bezier(.2,.7,.2,1);will-change:transform}
-.logo3d img{display:block;filter:drop-shadow(0 16px 18px rgba(94,18,48,.16))}
-@keyframes flotar{0%,100%{transform:translateY(0) rotateY(-5deg) rotateX(1deg)}50%{transform:translateY(-8px) rotateY(5deg) rotateX(-1deg)}}
-.sombra3d{width:50%;max-width:200px;height:18px;margin-top:12px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(94,18,48,.16),transparent 70%);animation:sombra 8s ease-in-out infinite}
-@keyframes sombra{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.88);opacity:.7}}
+.hero-logo{display:flex;flex-direction:column;align-items:center;justify-content:center;perspective:800px}
+/* Logo 3D: flota y gira con suavidad, y se inclina hacia el mouse */
+.flota{width:100%;max-width:400px;transform-style:preserve-3d;animation:flotar 5.5s ease-in-out infinite}
+.logo3d{transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--s,1));transition:transform .45s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.logo3d img{display:block;filter:drop-shadow(0 20px 20px rgba(94,18,48,.22))}
+@keyframes flotar{0%,100%{transform:translateY(0) rotateY(-11deg) rotateX(2.5deg)}50%{transform:translateY(-11px) rotateY(11deg) rotateX(-2.5deg)}}
+.sombra3d{width:52%;max-width:210px;height:20px;margin-top:12px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(94,18,48,.22),transparent 70%);animation:sombra 5.5s ease-in-out infinite}
+@keyframes sombra{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.84);opacity:.65}}
 .hero-logo img{width:100%;max-width:400px;height:auto;display:block}
 .logo-in{animation:entra .9s ease-out both}
 @keyframes entra{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
