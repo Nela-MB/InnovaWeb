@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>InnovaWeb · Transformamos ideas en soluciones digitales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" onerror="this.onerror=null;this.href='style.css'">
+<script>
+/* Si las imágenes no están en images/, las busca en la misma carpeta que index.html */
+document.addEventListener('error',function(e){var i=e.target;if(i.tagName==='IMG'&&!i.dataset.r&&/images\//.test(i.getAttribute('src'))){i.dataset.r=1;i.src=i.getAttribute('src').replace('images/','');}},true);
+</script>
+</head>
+<body>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="marca" href="#inicio" aria-label="InnovaWeb, ir al inicio">innova<span>web</span></a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav id="menu" aria-label="Principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#galeria">Proyectos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#cotizador">Cotizador</a></li>
+        <li><a href="#nosotras">Quiénes somos</a></li>
+        <li><a href="#contacto">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+<section id="inicio" aria-label="Inicio: proyectos destacados">
+    <div class="banner" id="banner" role="region" aria-roledescription="carrusel" aria-label="Páginas que creamos">
+      <a class="slide e1 activo" href="https://www.travesias4x4catamarca.com/" target="_blank" rel="noopener" aria-label="Visitar la página de Puna Travel (se abre en otra pestaña)"><img class="fondo" src="images/puna-travel.webp" alt="Captura de la página de Puna Travel"></a>
+      <a class="slide e2" aria-hidden="true" href="https://carolanatejido.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar la página de Carolana Tejidos (se abre en otra pestaña)"><img class="fondo" src="images/carolana.webp" alt="Captura de la página de Carolana Tejidos"></a>
+      <a class="slide e3" aria-hidden="true" href="https://lo-de-sofia-hospedaje.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar la página de Lo de Sofía (se abre en otra pestaña)"><img class="fondo" src="images/lo-de-sofia.webp" alt="Captura de la página de Lo de Sofía"></a>
+      <a class="slide e4" aria-hidden="true" href="https://fashionqueen-jn.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar la página de Fashion Queen (se abre en otra pestaña)"><img class="fondo" src="images/fashion-queen.webp" alt="Captura de la página de Fashion Queen"></a>
+      <a class="slide e5" aria-hidden="true" href="https://bodega-veralma.netlify.app/" target="_blank" rel="noopener" aria-label="Visitar la página de Bodega Veralma (se abre en otra pestaña)"><img class="fondo" src="images/bodega-veralma.webp" alt="Captura de la página de Bodega Veralma"></a>
+      <button class="ctrl ant" id="ant" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg></button>
+      <button class="ctrl sig" id="sig" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></button>
+      <div class="puntos" id="puntos"></div>
+      <div class="prog" id="prog"></div>
+    </div>
+</section>
+
+<section id="presentacion">
+  <div class="wrap hero">
+    <div class="rev">
+      <h1>Transformamos ideas en <em>soluciones digitales</em></h1>
+      <p>Somos un equipo de cuatro compañeras que diseña y desarrolla páginas web a medida para emprendimientos y negocios que quieren crecer.</p>
+      <div class="botones">
+        <a class="btn btn-vino" href="#cotizador">Calculá tu proyecto</a>
+        <a class="btn btn-borde" href="#servicios">Ver servicios</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <div class="flota"><div class="logo3d" id="logo3d"><img class="logo-in" src="images/logo.png" alt="Logo de InnovaWeb: letras I y W con un globo terráqueo"></div></div>
+      <div class="sombra3d" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUESTROS PROYECTOS: para agregar uno, copiá una <article class="tarjeta"> y cambiá data-cat, imagen, textos y enlace -->
+<section id="galeria" class="claro">
+  <div class="wrap">
+    <h2 class="rev">Nuestros proyectos</h2>
+    <p class="sub rev">Páginas reales que diseñamos y desarrollamos. Tocá una categoría para filtrar.</p>
+    <div class="filtros" role="group" aria-label="Filtrar proyectos por categoría">
+      <button class="filtro on" data-filtro="todos" aria-pressed="true">Todos</button>
+      <button class="filtro" data-filtro="turismo" aria-pressed="false">Turismo y hospedaje</button>
+      <button class="filtro" data-filtro="tiendas" aria-pressed="false">Tiendas y emprendimientos</button>
+      <button class="filtro" data-filtro="otros" aria-pressed="false">Otros proyectos</button>
+    </div>
+    <p class="sr" id="conteo" role="status" aria-live="polite"></p>
+    <div class="galeria" id="grilla">
+      <article class="tarjeta" data-cat="turismo"><img src="images/puna-travel.webp" alt="Captura de la página de Puna Travel" loading="lazy"><div class="cuerpo"><span class="etiqueta">Turismo y hospedaje</span><h3>Puna Travel</h3><p>Excursiones y travesías 4x4 por la Puna, con hospedaje y contacto directo.</p><a class="btn btn-vino btn-s" href="https://www.travesias4x4catamarca.com/" target="_blank" rel="noopener">Visitar sitio<span class="sr"> de Puna Travel (nueva pestaña)</span></a></div></article>
+      <article class="tarjeta" data-cat="turismo"><img src="images/lo-de-sofia.webp" alt="Captura de la página de Lo de Sofía" loading="lazy"><div class="cuerpo"><span class="etiqueta">Turismo y hospedaje</span><h3>Lo de Sofía</h3><p>Sitio de un hospedaje en Tinogasta, Catamarca, con reservas por contacto.</p><a class="btn btn-vino btn-s" href="https://lo-de-sofia-hospedaje.netlify.app/" target="_blank" rel="noopener">Visitar sitio<span class="sr"> de Lo de Sofía (nueva pestaña)</span></a></div></article>
+      <article class="tarjeta" data-cat="tiendas"><img src="images/carolana.webp" alt="Captura de la página de Carolana Tejidos" loading="lazy"><div class="cuerpo"><span class="etiqueta">Tiendas y emprendimientos</span><h3>Carolana Tejidos</h3><p>Emprendimiento de tejidos artesanales con sección de productos destacados.</p><a class="btn btn-vino btn-s" href="https://carolanatejido.netlify.app/" target="_blank" rel="noopener">Visitar sitio<span class="sr"> de Carolana Tejidos (nueva pestaña)</span></a></div></article>
+      <article class="tarjeta" data-cat="tiendas"><img src="images/fashion-queen.webp" alt="Captura de la página de Fashion Queen" loading="lazy"><div class="cuerpo"><span class="etiqueta">Tiendas y emprendimientos</span><h3>Fashion Queen</h3><p>Peluquería y tratamientos capilares, con galería y servicios.</p><a class="btn btn-vino btn-s" href="https://fashionqueen-jn.netlify.app/" target="_blank" rel="noopener">Visitar sitio<span class="sr"> de Fashion Queen (nueva pestaña)</span></a></div></article>
+      <article class="tarjeta" data-cat="otros"><img src="images/bodega-veralma.webp" alt="Captura de la página de Bodega Veralma" loading="lazy"><div class="cuerpo"><span class="etiqueta">Otros proyectos</span><h3>Bodega Veralma</h3><p>Sitio institucional de una bodega, con galería, servicios y datos de la empresa.</p><a class="btn btn-vino btn-s" href="https://bodega-veralma.netlify.app/" target="_blank" rel="noopener">Visitar sitio<span class="sr"> de Bodega Veralma (nueva pestaña)</span></a></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="wrap">
+    <h2 class="rev">Servicios y productos</h2>
+    <p class="sub rev">Acompañamos tu proyecto desde la idea hasta mucho después del lanzamiento.</p>
+    <div class="servicios">
+      <article class="servicio rev"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></div><div><h3>Desarrollo web</h3><p>Creamos sitios web modernos, rápidos y adaptables a cualquier dispositivo.</p><a href="#contacto" data-servicio="Desarrollo web">Consultar</a></div></article>
+      <article class="servicio rev"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9h5M7 13h9"/></svg></div><div><h3>Diseño UX/UI</h3><p>Creamos interfaces intuitivas, atractivas y fáciles de utilizar.</p><a href="#contacto" data-servicio="Diseño UX/UI">Consultar</a></div></article>
+      <article class="servicio rev"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.2L20 7H6"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg></div><div><h3>E-commerce</h3><p>Creamos tiendas online para que los negocios puedan vender sus productos de manera sencilla.</p><a href="#contacto" data-servicio="E-commerce">Consultar</a></div></article>
+      <article class="servicio rev"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0-5 5L3 18l3 3 6.5-6.5a4 4 0 0 0 5-5l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></div><div><h3>Mantenimiento y soporte</h3><p>Acompañamos cada proyecto después de su lanzamiento.</p><a href="#contacto" data-servicio="Mantenimiento y soporte">Consultar</a></div></article>
+    </div>
+    <p class="nota">Próximamente: acá vamos a sumar paquetes y productos con sus precios.</p>
+  </div>
+</section>
+
+<section id="como" class="claro">
+  <div class="wrap">
+    <h2 class="rev">Cómo trabajamos</h2>
+    <p class="sub rev">Un proceso simple, con comunicación clara en cada etapa.</p>
+    <ol class="pasos">
+      <li class="paso rev"><span class="num">1</span><h3>Nos contás tu idea</h3><p>Escuchamos qué necesitás y a quién querés llegar.</p></li>
+      <li class="paso rev"><span class="num">2</span><h3>Diseñamos la propuesta</h3><p>Preparamos el diseño y la estructura de tu sitio.</p></li>
+      <li class="paso rev"><span class="num">3</span><h3>Desarrollamos tu página</h3><p>Programamos un sitio rápido, adaptable y fácil de usar.</p></li>
+      <li class="paso rev"><span class="num">4</span><h3>Publicamos tu proyecto</h3><p>Lo ponemos online y te acompañamos después.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="cotizador">
+  <div class="wrap">
+    <h2 class="rev">Calculá tu proyecto web</h2>
+    <p class="sub rev">Respondé unas preguntas y armamos un resumen para tu presupuesto personalizado.</p>
+    <div class="cot" id="cot">
+      <div class="cot-barra" aria-hidden="true"><div id="cotBarra"></div></div>
+      <p class="cot-paso" id="cotPaso" aria-live="polite"></p>
+      <div id="cotCuerpo"></div>
+      <div class="cot-nav">
+        <button class="btn btn-borde" id="cotAtras" type="button">Atrás</button>
+        <button class="btn btn-vino" id="cotSig" type="button">Siguiente</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotras" class="vino">
+  <div class="wrap">
+    <h2>¿Quiénes somos?</h2>
+    <p class="sub">En InnovaWeb desarrollamos soluciones digitales pensadas para resolver problemas reales, mejorar procesos y ayudar a nuestros clientes a llevar sus ideas al siguiente nivel.</p>
+    <p class="pregunta">¿Por qué elegir InnovaWeb?</p>
+    <div class="razones">
+      <div class="razon"><h3>Soluciones a medida</h3><p>No creemos en soluciones iguales para todos. Cada proyecto se adapta a las necesidades de nuestros clientes.</p></div>
+      <div class="razon"><h3>Diseño + tecnología</h3><p>Combinamos una buena experiencia visual con herramientas tecnológicas eficientes.</p></div>
+      <div class="razon"><h3>Trabajo en equipo</h3><p>Cuatro perspectivas diferentes trabajando hacia un mismo objetivo.</p></div>
+      <div class="razon"><h3>Innovación constante</h3><p>Nos mantenemos actualizadas para incorporar nuevas tecnologías y tendencias.</p></div>
+    </div>
+    <p class="pregunta">Nuestro equipo</p>
+    <div class="equipo">
+      <article class="miembro rev"><div class="foto"><img src="images/yanina.webp" alt="Foto de Yanina, Scrum Master" loading="lazy"></div><h3>Yanina</h3><p class="rol">Scrum Master</p></article>
+      <article class="miembro rev"><div class="foto"><img src="images/laura.webp" alt="Foto de Laura, Diseñadora UX/UI" loading="lazy"></div><h3>Laura</h3><p class="rol">Diseñadora UX/UI</p></article>
+      <article class="miembro rev"><div class="foto"><img src="images/julieta.webp" alt="Foto de Julieta, Desarrolladora Frontend" loading="lazy"></div><h3>Julieta</h3><p class="rol">Desarrolladora Frontend</p></article>
+      <article class="miembro rev"><div class="foto"><img src="images/marianela.webp" alt="Foto de Marianela, Desarrolladora Backend" loading="lazy"></div><h3>Marianela</h3><p class="rol">Desarrolladora Backend</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap contacto">
+    <div>
+      <h2>Contáctanos</h2>
+      <p>Contanos tu idea y te respondemos con una propuesta pensada para tu negocio.</p>
+      <ul class="datos">
+        <li><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>contacto@innovaweb.com</li>
+        <li class="tels"><span class="ico"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><span class="lista"><a href="tel:3837524469">3837 52-4469</a><a href="tel:3837432348">3837 43-2348</a><a href="tel:3837433940">3837 43-3940</a><a href="tel:3837406733">3837 40-6733</a></span></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>@innovaweb</li>
+      </ul>
+    </div>
+    <form id="form" novalidate>
+      <label for="nombre">Nombre</label>
+      <input id="nombre" name="nombre" type="text" autocomplete="name" required aria-describedby="e-nombre">
+      <p class="err" id="e-nombre"></p>
+      <label for="email">Correo electrónico</label>
+      <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
+      <p class="err" id="e-email"></p>
+      <label for="servicio">Servicio de interés</label>
+      <select id="servicio" name="servicio">
+        <option value="">Elegí una opción</option>
+        <option>Desarrollo web</option><option>Diseño UX/UI</option><option>E-commerce</option><option>Mantenimiento y soporte</option><option>Otro</option>
+      </select>
+      <label for="tipo">Tipo de proyecto</label>
+      <select id="tipo" name="tipo">
+        <option value="">Elegí una opción</option>
+        <option>Emprendimiento</option><option>Negocio o comercio</option><option>Empresa</option><option>Turismo u hospedaje</option><option>Otro</option>
+      </select>
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" required aria-describedby="e-mensaje"></textarea>
+      <p class="err" id="e-mensaje"></p>
+      <div class="adjunto" id="adjunto" hidden>
+        <strong>Resumen del cotizador incluido</strong>
+        <pre id="adjuntoTxt"></pre>
+        <button type="button" class="btn-link" id="quitar">Quitar resumen</button>
+      </div>
+      <button class="btn btn-vino" type="submit">Enviar mensaje</button>
+      <p class="msg" id="msg" role="status" aria-live="polite" tabindex="-1"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p><strong>innova<span>web</span></strong> · Transformamos ideas en soluciones digitales</p>
+  <p>© <span id="anio"></span> InnovaWeb. Todos los derechos reservados.</p>
+</footer>
+
+<a class="wa" id="wa" href="#contacto" aria-label="Escribinos por WhatsApp (se abre en otra pestaña)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.200zm4.5-6.1c-.2-.1-1.500-.7-1.700-.8s-.4-.1-.6.1l-.8 1c-.1.200-.3.200-.5.100a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.200-.4.700-1.300.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.300 3 3 0 0 0-.9 2.200c0 1.300.9 2.500 1 2.700s1.800 2.800 4.400 3.900c1.600.7 2.200.7 3 .6.500-.1 1.500-.6 1.700-1.200s.2-1.100.2-1.200-.2-.2-.4-.3z"/></svg></a>
+<button class="arriba" id="arriba" aria-label="Volver al inicio" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 15 7-7 7 7"/></svg></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/script.js" onerror="var s=document.createElement('script');s.src='script.js';document.body.appendChild(s)"></script>
+</body>
+</html>
